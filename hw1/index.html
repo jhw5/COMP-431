@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+        <title>Registration</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Jeffrey Wang">
+
+        <script>
+
+            function validateForm(){
+                var pass;
+                var date;
+
+                //validating age requirement
+                var inputText = document.getElementsByName("date");
+                var dateText = inputText[0].value;
+                var dateFormat = /^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/;
+                var date = dateText.split('/');
+                var mm = parseInt(date[0]);
+                var dd = parseInt(date[1]);
+                var yy = parseInt(date[2]);
+                // Current year, month, and day
+                var d = new Date();
+                var cyy = d.getFullYear();
+                var cmm = d.getMonth() + 1;
+                var cdd = d.getDate();
+                var limityy = cyy-18;
+                if (yy <= limityy && mm <= cmm && dd <= cdd){
+                    date = true;
+                } else {
+                    date = false;
+                }
+
+                //hidden timestamp
+                var milli = d.getTime()
+                document.getElementById("currentTime").value = milli;
+
+                //validating password
+                var password = document.forms["myForm"]["password"].value;
+                var confirm = document.forms["myForm"]['confirm'].value;
+                if (password == confirm) {
+                    pass = true;
+                } else {
+                    pass = false;
+                }
+
+                // validating form
+                if (pass & date){
+                    return true;
+                }else{
+                    if (!date & pass){
+                        alert("You must be 18 years or older to register an account.");
+                        return false;
+                    }else if (!pass & date){
+                        alert("Your password does not match!");
+                        return false;
+                    }else{
+                        alert("You must be 18 years or older to register an account. \nYour password does not match!")
+                        return false;
+                    }
+                }
+            }
+        </script>
+	</head>
+	<body>
+	<h1>RiceBook! </h1>
+
+		<form id="myForm" onsubmit="return validateForm()" action="formProcessor.html" method="GET" >
+
+ 			<p>Account Name <br> <input type="text" name="accountName" pattern="^[^0-9][a-zA-Z0-9]*" required></p>
+
+            <p>Display Name<br> <input type="text" name="displayName"></p>
+
+			<p>Email Address <br> <input type="text" name="email" pattern="(.*)+[@]+(.*)[.]+(.*)" required></p>
+
+			<p>Phone Number 123-123-1234 <br><input type="phone" name="phone" pattern="\d\d\d[\-]\d\d\d[\-]\d\d\d\d"></p>
+
+			<p>Zip Code <br> <input type="phone" name="zcode" pattern="\d\d\d\d\d" required></p>
+
+			<p>Date of Birth <br> <input type="text" name="date" pattern="^([0-9]{2})\/([0-9]{2})\/([0-9]{4})" required></p>
+
+ 			<p>Password <br> <input type="password" name="password" id="password" placeholder="Password" required></p>
+
+			<p>Confirm Password <br> <input type="password" id="confirm" name="confirm" placeholder="Confirm Password" required></p>
+
+            <input type="hidden" name="currentTime" id="currentTime">
+			<input type="submit" value="Place Order" >
+			<input type="reset" value="Clear">
+
+		</form>
+	</body>
+</html>

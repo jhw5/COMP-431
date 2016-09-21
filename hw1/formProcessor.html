@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>Summary of Your Inputs</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Jeffrey Wang">
+        <script>
+            function getQuery(vari){
+                var query=window.location.search.substring(1);
+                var vars = query.split('&');
+                for (var i = 0; i < vars.length; i++){
+                    var pair = vars[i].split('=');
+                    if (decodeURIComponent(pair[0]) == vari){
+                        return decodeURIComponent(pair[1]);
+                    }
+                }
+            }
+            function assign(){
+                var name = getQuery("accountName");
+                document.getElementById("aname").innerHTML = name;
+                var dname = getQuery("displayName");
+                document.getElementById("dname").innerHTML = dname;
+                var email = getQuery("email");
+                document.getElementById("email").innerHTML = email;
+                var number = getQuery("phone");
+                document.getElementById("phone").innerHTML = number;
+                var zip = getQuery("zcode");
+                document.getElementById("zcode").innerHTML = zip;
+                var date = getQuery("date");
+                document.getElementById("date").innerHTML = date;
+                var password = getQuery("password");
+                document.getElementById("password").innerHTML = password;
+                var currentTime = getQuery("currentTime");
+                document.getElementById("currentTime").innerHTML = currentTime;
+                document.getElementById("readable").innerHTML = Date(currentTime);
+            }
+        </script>
+    </head>
+    <body onload="assign()">
+        <table style="width:100%">
+            <tr>
+                <td><h1>Information</h1></td>
+                <td><h1>Your Inputs</h1></td>
+            </tr>
+            <tr>
+                <td>Account Name</td>
+                <td id="aname"></td>
+            </tr>
+            <tr>
+                <td>Display Name</td>
+                <td id="dname"></td>
+            </tr>
+            <tr>
+                <td>Email Address</td>
+                <td id="email"></td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td id="phone"></td>
+            </tr>
+            <tr>
+                <td>Zip Code</td>
+                <td id="zcode"></td>
+            </tr>
+            <tr>
+                <td>Date of Birth</td>
+                <td id="date"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td id="password"></td>
+            </tr>
+            <tr>
+                <td>Current Time (Since Epoch)</td>
+                <td id="currentTime"></td>
+                <td id="readable"></td>
+            </tr>
+        </table>
+    </body>
+</html>
+
+
+
+
+
+

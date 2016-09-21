@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://www.clear.rice.edu/comp431/sample/main.html -->
+<html lang="en">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Rice Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jeffrey Wang">
+
+
+    <!--linking css stylesheet-->
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!--semantic library-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+
+    <script src="main.js"></script>
+</head>
+
+<body>
+<header>
+    <div>
+        <a class="item" href="main.html">
+            <i class="home icon"></i>
+            Home
+        </a>
+        <a class="item" href="profile.html">
+            <i class="block layout icon"></i>
+            Profile
+        </a>
+        <input type="button" class="button" value="Logout" id="logout">
+    </div>
+</header>
+
+    <div class="ui search center">
+        <input class="prompt" type="text" placeholder="Search Articles...">
+        <div class="results"></div>
+        <button class="ui button">Search...</button>
+    </div>
+
+
+
+    <div class="ui custom card center aligned">
+        <div class="image center aligned">
+            <img src="album1/msp_0708_0663.jpg">
+        </div>
+        <div class="content">
+            <a class="header">Jeffrey Wang</a>
+            <div class="meta">
+                <span class="date">Joined in 2013</span>
+            </div>
+            <div class="description">
+                "Don't worry, be happy!"
+            </div>
+        </div>
+        <div class="ui search">
+            <input class="prompt" type="text" placeholder="Post Status">
+            <div class="results"></div>
+            <button class="ui button">Update</button>
+        </div>
+    </div>
+
+<div class="ui custom card center aligned" id="post">
+    <!--post an article and photo-->
+    <div class="content">
+        <a class="header">Post an article!</a>
+        <div class="ui search">
+            <input id="clearInput" class="prompt" type="text" placeholder="Post">
+            <div class="results"></div>
+            <button class="ui button">Post</button>
+            <button class="ui button" id="clearBtn">Clear</button>
+        </div>
+    </div>
+    <div class="content">
+        <a class="header">Post a photo!</a>
+        <input type="file">
+    </div>
+
+
+</div>
+    <div class="ui link cards">
+        <div class="card">
+            <div class="image">
+                <img src="album1/msp_0708_0663.jpg">
+            </div>
+            <div class="content">
+                <div class="header">Anthony Watts</div>
+                <div class="description">
+                    "I love pumpkin spice latte's
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image">
+                <img src="album1/msp_0708_0663.jpg">
+            </div>
+            <div class="content">
+                <div class="header">Ava Woods</div>
+                <div class="description">
+                    "I love kanye"
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image">
+                <img src="album1/msp_0708_0663.jpg">
+            </div>
+            <div class="content">
+                <div class="header">Aaron Wong</div>
+                <div class="description">
+                    "flyin like a g6"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table id="feed" >
+    </table>
+
+</body>
+</html>

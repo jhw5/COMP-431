@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+
+    <!--linking css stylesheet-->
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!--semantic library-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+
+    <script src="index.js"></script>
+
+</head>
+<body>
+<header>
+    <div>
+        <h1>Welcome to Rice Book!</h1>
+    </div>
+</header>
+
+
+<div class="ui custom card center aligned">
+    <!--blah-->
+    <h1 class="header">Register</h1>
+    <form id="myForm" onsubmit="return validateForm()" class="ui form" action="main.html" method="GET" >
+        <p>Account Name <br> <input type="text" name="accountName" pattern="^[^0-9][a-zA-Z0-9]*" required></p>
+
+        <p>Display Name<br> <input type="text" name="displayName"></p>
+
+        <p>Email Address <br> <input type="text" name="email" pattern="(.*)+[@]+(.*)[.]+(.*)" required></p>
+
+        <p>Phone Number 123-123-1234 <br> <input type="text" name="phone" pattern="\d\d\d[\-]\d\d\d[\-]\d\d\d\d"></p>
+
+        <p>Zip Code <br> <input type="text" name="zcode" pattern="\d\d\d\d\d" required></p>
+
+        <p>Date of Birth <br> <input type="text" name="date" pattern="^([0-9]{2})\/([0-9]{2})\/([0-9]{4})" required></p>
+
+        <p>Password <br> <input type="password" name="password" id="password" placeholder="Password" required></p>
+
+        <p>Confirm Password <br> <input type="password" id="confirm" name="confirm" placeholder="Confirm Password" required></p>
+
+        <input type="hidden" name="currentTime" id="currentTime">
+        <input type="submit" value="Register" >
+        <input type="reset" value="Clear">
+    </form>
+</div>
+<div class="ui custom card center aligned">
+    <h1 class="header">Log-In</h1>
+    <div>
+        <input type="text" placeholder="username" id="username">
+        <input type="text" placeholder="password" id="pass">
+
+        <input type="button" class="button" value="Login" id="login">
+    </div>
+</div>
+
+
+</body>
+</html>

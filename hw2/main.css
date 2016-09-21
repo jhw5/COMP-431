@@ -1,0 +1,50 @@
+div{
+    border-bottom: solid;
+    padding:5%;
+}
+
+.button{
+    background-color: cadetblue; /* Green */
+    border: none;
+    padding: 10px 25px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+#feed{
+    border:solid;
+    padding: 5%;
+}
+th{
+    border-bottom: solid thin;
+    padding: 2%;
+}
+input[type="text"] {
+    display: block;
+    width: 50%;
+    font-family: "Futura LT Light";
+    font-size: 18px;
+    padding: 10px;
+    border: solid 5px #c9c9c9;
+}
+input[type="password"] {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    border: solid 5px #c9c9c9;
+}
+#submit {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    border: solid 5px #c9c9c9;
+    margin: 0 auto;
+
+}
+img {
+    width: 500px;
+    height:400px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}

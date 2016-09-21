@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jeffrey Wang">
+    <title>Profile Page</title>
+
+    <!--linking css stylesheet-->
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!--semantic library-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+
+
+
+
+    <script src="profile.js"></script>
+</head>
+<header>
+    <div>
+        <a class="item" href="main.html">
+            <i class="home icon"></i>
+            Home
+        </a>
+        <a class="item" href="profile.html">
+            <i class="block layout icon"></i>
+            Profile
+        </a>
+        <input type="button" class="button" value="Logout" id="logout">
+    </div>
+</header>
+   <body>
+
+        <div id="mainClass" class="ui custom card center aligned" >
+            <div class="image center aligned">
+                <img src="album1/msp_0708_0663.jpg">
+                <input type="file">
+            </div>
+
+            <div id="currentInfo">
+                <h1>Current Information</h1>
+            </div>
+
+            <div id="inputs">
+                <h1>Update Profile Information</h1>
+            </div>
+
+            <div>
+                <input type="button" value="Submit" id="submit">
+            </div>
+
+        </div>
+
+
+
+   </body>
+</html>

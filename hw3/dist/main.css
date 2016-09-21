@@ -1,0 +1,94 @@
+body{
+    width:100%;
+}
+
+.inputFields{
+    margin: auto;
+    padding-bottom: 1%;
+
+}
+
+.regPage {
+    text-align: center;
+}
+#inputs{
+    display: inline-block;
+    float:left;
+}
+
+#currentInfo {
+
+}
+
+#currentInfo label{
+    display: block;
+}
+
+#mainClass{
+    margin: auto;
+}
+
+#feed{
+    padding: 5%;
+}
+#login {
+    color: black;
+}
+#shareButton {
+    color: black;
+}
+
+.users.ui.card{
+    float:left;
+}
+
+.item input[type="text"] {
+    color: black;
+}
+th{
+    border-bottom: 10px solid grey;
+    padding: 2%;
+    border-left: none;
+    border-right: none;
+}
+
+.ui.custom.card{
+    width: 30%;
+    float:left;
+}
+
+#myForm{
+    margin: auto;
+    width: 60%;
+}
+
+input[type="text"] {
+    width: 50%;
+    font-family: "Futura LT Light";
+}
+
+input[type="password"] {
+    width: 50%;
+    font-family: "Futura LT Light";
+}
+input[id="username"]{
+    width:50%;
+}
+#submit {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    border: solid 5px #c9c9c9;
+    margin: auto;
+
+}
+img {
+    width: 500px;
+    height:400px;
+}
+#feed {
+    margin: auto;
+    width: auto;
+    padding: 5%;
+    display: block;
+}
