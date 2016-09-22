@@ -115,7 +115,7 @@ function updateLabels(idName, titleIndex){
 window.onload = function(){
     document.getElementById("logout").onclick = function(){
         window.location.href="index.html";
-    }
+    };
     //for each id in idNames... we perform insertDiv on it
     idNames.forEach(insertDiv);
 

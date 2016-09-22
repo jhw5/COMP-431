@@ -16,10 +16,6 @@ body{
     float:left;
 }
 
-#currentInfo {
-
-}
-
 #currentInfo label{
     display: block;
 }
@@ -55,6 +51,7 @@ th{
 .ui.custom.card{
     width: 30%;
     float:left;
+    text-align: center;
 }
 
 #myForm{

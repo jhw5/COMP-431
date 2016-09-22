@@ -20,51 +20,13 @@ window.onload = function(){
         //for even indexes in the array we want to create a new row
         //for odd indexes, we just want to create a new cell
         if (idx % 2 == 0) {
+            //column one
             row = document.createElement("tr");
-            var col1 = document.createElement("th");
-            var x = document.createTextNode(textArr[idx]);
-            var likeBtn = createButt("Like");
-            var commentBtn = createButt("Comment");
-            var editBtn = createButt("Edit")
-            //randomly insert images
-            if (Math.random() > 0.5) {
-                var imag = createImg(idx);
-                col1.appendChild(imag);
-                col1.appendChild(x);
-                col1.appendChild(likeBtn);
-                col1.appendChild(commentBtn);
-                col1.appendChild(editBtn);
-
-            } else {
-                col1.appendChild(x);
-                col1.appendChild(likeBtn);
-                col1.appendChild(commentBtn)
-                col1.appendChild(editBtn);
-            }
+            var col1 = colCreate(idx)
             row.appendChild(col1);
         } else {
-            var col2 = document.createElement("th");
-            var y = document.createTextNode(textArr[idx]);
-            var likeBtn = createButt("Like");
-            var commentBtn = createButt("Comment");
-            var editBtn = createButt("Edit")
-
-            //randomly insert images
-            if (Math.random() > 0.5) {
-                var imag = createImg(idx);
-                col2.appendChild(imag);
-                col2.appendChild(y);
-                col2.appendChild(likeBtn);
-                col2.appendChild(commentBtn);
-                col2.appendChild(editBtn);
-
-            } else{
-                col2.appendChild(y);
-                col2.appendChild(likeBtn);
-                col2.appendChild(commentBtn);
-                col2.appendChild(editBtn);
-
-            }
+            // column 2
+            var col2 = colCreate(idx);
             row.appendChild(col2);
             document.getElementById("feed").appendChild(row);
         }
@@ -72,8 +34,37 @@ window.onload = function(){
 
 
 };
+//creating column cells
+function colCreate(idx){
+    var col = document.createElement("th");
+    var txt = document.createTextNode(textArr[idx]);
+    var button = buttons();
+    //randomly insert images
+    if (Math.random() > 0.5) {
+        col.appendChild(IMG(idx));
+    }
+    col.appendChild(txt);
+    col.appendChild(button);
+    return col;
+}
+
+//creating img div
+function IMG(idx){
+    var imag = document.createElement('div');
+    imag.appendChild(createImg(idx));
+    return imag;
+
+}
 
 
+//creating button div
+function buttons(){
+    var button = document.createElement("div");
+    button.appendChild(createButt("Like"));
+    button.appendChild(createButt("Comment"));
+    button.appendChild(createButt("Edit"));
+    return button;
+}
 
 var imgArr = [
     "album1/msp_0708_0663.jpg",
@@ -120,7 +111,7 @@ function createImg(idx){
 function createButt(value){
     var btn = document.createElement("input");
     btn.type="button";
-    btn.className = "extraBtns";
+    btn.className = "ui button";
     btn.value=value;
     return btn;
 }
