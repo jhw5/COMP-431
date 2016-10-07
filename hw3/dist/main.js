@@ -3,10 +3,6 @@
  */
 
 
-
-
-
-
 window.onload = function(){
     document.getElementById("logout").onclick = function(){
         window.location.href="index.html";
@@ -53,7 +49,6 @@ function IMG(idx){
     var imag = document.createElement('div');
     imag.appendChild(createImg(idx));
     return imag;
-
 }
 
 
