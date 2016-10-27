@@ -3,14 +3,14 @@ import Action from './actions'
 import { combineReducers } from 'redux'
 
 
-function general(state = {location:''}, action) {
+function general(state = {page:''}, action) {
 	switch (action.type) {
 		case Action.NAV_PROFILE:
-			return {...state, location: 'PROFILE'}
+			return {...state, page: 'PROFILE'}
 		case Action.NAV_MAIN:
-			return {...state, location: 'MAIN'}
+			return {...state, page: 'MAIN'}
 		case Action.NAV_LANDING:
-			return {...state, location: 'LANDING'}
+			return {...state, page: 'LANDING'}
 		default:
 			return {...state}
 	}

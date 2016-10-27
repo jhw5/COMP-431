@@ -15,10 +15,6 @@ const Action = {
 }
 export default Action
 
-export function navToProfile() { return { type: Action.NAV_PROFILE }}
-export function navToMain() { return { type: Action.NAV_MAIN }}
-export function navToLanding() { return { type: Action.NAV_LANDING }}
-
 const resource = (method, endpoint, payload) => {
     const options =  {
         method,
@@ -57,17 +53,17 @@ export function logout() {
     return (dispatch) => {
         resource('PUT', 'logout')
             .then(r => {
-                dispatch(navToLanding())
+                dispatch({type : Action.NAV_LANDING})
             }
         )
     }
 }
 
 
-export function update_profile ({email, zipcode, password, passconf}) {
+export function update_profile ({zipcode, email, password, passconf}) {
     return (dispatch) => {
-        dispatch (update_values('email', email))
         dispatch (update_values('zipcode', zipcode))
+        dispatch (update_values('email', email))
         dispatch (update_values('password', password))
         dispatch (update_values('passconf', passconf))
 
@@ -97,8 +93,8 @@ export function update_values (key, value) {
 export function get_profile() {
     return (dispatch) => {
         dispatch(get_values('avatars'))
-        dispatch(get_values('email'))
         dispatch(get_values('zipcode'))
+        dispatch(get_values('email'))
     }
 }
 
@@ -109,13 +105,10 @@ export function get_values(key) {
             switch (key) {
                 case 'avatars' :
                     action.avatar = r.avatars[0].avatar;
-                    break;
+                case 'zipcode' :
+                    action.zipcode = r.zipcode;
                 case 'email' :
                     action.email = r.email; 
-                    break;
-                case 'zipcode' :
-                    action.zipcode = r.zipcode; 
-                    break;
             } dispatch(action)
         })
     }
@@ -128,7 +121,7 @@ export function currentState() {
                 type : Action.UPDATE_HEADLINE,
                 headline : r.headlines[0].headline,
             })
-            dispatch(navToMain())
+            dispatch({type : Action.NAV_MAIN})
             dispatch(get_profile())
         })
     }

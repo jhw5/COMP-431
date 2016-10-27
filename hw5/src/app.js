@@ -4,14 +4,6 @@ import Landing from './components/auth/landing'
 import Main from './components/main/main'
 import Profile from './components/profile/profile'
 
-// export const App = () => (
-// <div>
-//     <Profile />
-// </div>
-// )
-//
-// export default connect() (App)
-
 
 
 export const App = ({location}) => {
@@ -32,14 +24,11 @@ export const App = ({location}) => {
     )
 }
 
-App.propTypes = {
-    location: PropTypes.string.isRequired,
-}
 
 export default connect(
     (state) => {
         return {
-            location: state.general.location
+            location: state.general.page
         }
     }
 )(App)
