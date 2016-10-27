@@ -1,8 +1,8 @@
 {
-  "name": "Javascript Game",
+  "name": "JavascriptGame",
   "version": "1.0.0",
   "description": "COMP 431 HW4",
-  "main": "./src/main.js",
+  "main": "./dist/main.js",
   "scripts": {
     "deploy": "surge -p dist",
     "start": "cd dist && (python -m SimpleHTTPServer 8080 || python -m http.server 8080)"
