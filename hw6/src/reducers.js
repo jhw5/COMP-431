@@ -32,22 +32,50 @@ function profile(state = {username:'', email:'', headline:'', avatar:'', zipcode
 			if (action.avatar) {
 				return {...state, avatar : action.avatar}
 			}
+			
+			
 
 		case Action.UPDATE_HEADLINE:
 			return {...state, headline : action.headline}
 
 		case Action.LOCAL_LOGIN:
 			return {...state,
-				username : action.username,
-				headline : action.headline
+				username : action.username, headline: action.headline
 			}
 		default:
 			return state
 	}
 }
 
+function followers(state = {followers:[]}, action) {
+	switch (action.type) {
+		case Action.GET_FOLLOWERS:
+				return {...state, followers: action.followers}
+
+
+		case Action.UNFOLLOWER:
+			return {...state, following:[], avatars: [], headlines:[]}
+		default:
+			return state
+	}
+}
+
+function articles(state = {articles:[], avatar:[]}, action) {
+	switch (action.type) {
+		case Action.GET_ARTICLES:
+			if (action.articles) {
+				return {...state, articles: action.articles}
+			}
+			
+		
+		default:
+			return state
+	}
+}
+
+
 const Reducer = combineReducers({
-	general, profile
+	general, profile, followers, articles
 })
 
 
