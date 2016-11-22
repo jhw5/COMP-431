@@ -16,9 +16,14 @@ import Nav from './nav'
 
 export const Main = () => (
     <div>
-        <Nav />
+        <div className="row">
+            <div className="col-*-*">
+
+            </div>
+        </div>
         <div className="row">
             <div className="col-md-3">
+                <Nav />
                 <Profile />
             </div>
             <div className="col-md-9">

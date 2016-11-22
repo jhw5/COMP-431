@@ -18,7 +18,7 @@ export const App = ({location}) => {
         page = <Landing />
     }
     return (
-        <div>
+        <div className="container-fluid">
             {page}
         </div>
     )

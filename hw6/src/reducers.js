@@ -32,11 +32,15 @@ function profile(state = {username:'', email:'', headline:'', avatar:'', zipcode
 			if (action.avatar) {
 				return {...state, avatar : action.avatar}
 			}
-			
+			if (action.username) {
+				return {...state, username : action.username}
+			}
 			
 
 		case Action.UPDATE_HEADLINE:
-			return {...state, headline : action.headline}
+			return {...state,
+				username : action.username, headline: action.headline
+			}
 
 		case Action.LOCAL_LOGIN:
 			return {...state,
@@ -52,9 +56,6 @@ function followers(state = {followers:[]}, action) {
 		case Action.GET_FOLLOWERS:
 				return {...state, followers: action.followers}
 
-
-		case Action.UNFOLLOWER:
-			return {...state, following:[], avatars: [], headlines:[]}
 		default:
 			return state
 	}
@@ -66,7 +67,6 @@ function articles(state = {articles:[], avatar:[]}, action) {
 			if (action.articles) {
 				return {...state, articles: action.articles}
 			}
-			
 		
 		default:
 			return state

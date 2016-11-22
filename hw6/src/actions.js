@@ -116,7 +116,24 @@ export function add_article(payload) {
         })
     }
 }
+
 export function add_comment(id, payload) {
+    return (dispatch) => {
+        resource('PUT', 'articles/'+id, payload).then(r => {
+            dispatch(get_articles())
+        })
+    }
+}
+
+export function edit_comment(id, payload) {
+    return (dispatch) => {
+        resource('PUT', 'articles/'+id, payload).then(r => {
+            dispatch(get_articles())
+        })
+    }
+}
+
+export function edit_article(id, payload) {
     return (dispatch) => {
         resource('PUT', 'articles/'+id, payload).then(r => {
             dispatch(get_articles())
@@ -186,43 +203,10 @@ export function get_followers() {
 export function get_articles() {
     return (dispatch) => {
         resource('GET', 'articles').then( r => {
-            // r.articles.map(x => {
-            //     dispatch({
-            //         type : Action.GET_ARTICLES,
-            //         text : x.text,
-            //         author : x.author
-            //     })
-            // })
             dispatch({
                 type: Action.GET_ARTICLES,
                 articles: r.articles
             })
-            // dispatch({
-            //     type: Action.GET_ARTICLES,
-            //     text: r.articles.map(x => x.text),
-            // })
-            //
-            // dispatch({
-            //     type: Action.GET_ARTICLES,
-            //     author: r.articles.map(x => x.author)
-            // })
-            //
-            // dispatch({
-            //     type: Action.GET_ARTICLES,
-            //     avatar: r.articles.map(x => x.img)
-            // })
-
-            // r.articles.map(x =>
-            //     dispatch({
-            //         type: Action.GET_ARTICLES,
-            //         comment: x.comments
-            //     })
-            // )
-            // dispatch({
-            //     type : Action.GET_ARTICLES,
-            //     comments : r.articles.map(x => x.comments)
-            // })
-
         })
         }
     }

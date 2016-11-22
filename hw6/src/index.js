@@ -9,11 +9,13 @@ import thunkMiddleware from 'redux-thunk'
 import Reducer from './reducers'
 
 import App from './app'
+import {currentState} from './actions'
 
 const logger = createLogger()
 
 let store = createStore(Reducer, applyMiddleware(thunkMiddleware))
 // let store = createStore(Reducer)
+currentState()(store.dispatch)
 
 render(
     <Provider store={store}>
