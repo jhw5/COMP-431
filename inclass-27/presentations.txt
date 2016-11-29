@@ -1,0 +1,12 @@
+I thought that the presentation about the css frameworks was most polished and delivered. 
+Even though it did not have fancy graphics, the font was readable (not too small) and 
+the slides were succinct and too the point. The presentation flow in general was easy to follow.
+
+I thought that I learned a lot from the Hybrid Mobile Apps presentation. Most notably, 
+I learned about how Cordova offers a variety of plugins for easy implementation and that
+updates for native apps (ios or andriod) render previously developed apps useless.
+
+I am glad someone talked about the Materials Design Lite. I looked into the API and it looks super cool! I might even
+implement the library in my front end for my project! Just because Material Design Lite is such a cool library,
+I liked this talk the most. 
+
