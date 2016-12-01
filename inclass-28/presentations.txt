@@ -1,0 +1,11 @@
+I thought that the presentation about Advertising was most polished. I liked the graphics/pictures that he used 
+and the minimal text that complements each photo. The consistent design theme is simple and easy to follow. 
+To elaborate, the headers are consistently in a blue region at the top of each slide, and each photo is constently
+complimented by text beside it. 
+
+I thought that I learned the most from the Web Crawler presentation. Thought it was interesting how he mentioned 
+legal issues surrounding big data scraping. I also loved how he mentioned Quora as an example of how we would manually
+scrape the data. He also touched upon the web crawling framework, scrapy, to parse html web pages. 
+
+I liked the web crawler presentation the most because I found the topic most interesting. It gave me an introduction
+to web scraping and the tools that I should look into like scrapy. 
